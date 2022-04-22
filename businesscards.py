@@ -7,6 +7,8 @@ class BaseContnact:
         self.name = name
         self.phone = phone
         self.email = email
+
+        self.label_lenght = len(name)
     
     def contact(self):
         return f"Wybieram {self.phone} i dzwonię do {self.name} \n"
@@ -29,6 +31,7 @@ class BusinessContact(BaseContnact):
         self.occupation = occupation
         self.company = company
         self.businessphone = businessphone
+    
     def contact(self):
         return f"Wybieram {self.businessphone} i dzwonię do {self.name} \n"
     
@@ -45,7 +48,7 @@ card_ten = BusinessContact(name = card_five.name,phone = fake.phone_number(),ema
 
 
 for i in [card_one, card_two, card_three, card_four, card_five, card_six,card_seven,card_eight, card_nine,card_ten]:
-    print(f"{i.name},{i.phone},{i.email}")
+    print(f"{i.name},{i.phone},{i.email},{i.label_lenght}")
 
 for i in [card_one, card_two, card_three, card_four, card_five]:
     print(i.contact())
